@@ -1,0 +1,83 @@
+<section class="products section bg-gray">
+    <div class="container">
+        {{#if products}}
+        <div class="row">
+            <div class="title text-center">
+                <h2>Search Results...</h2>
+            </div>
+        </div>
+        {{else}}
+        <div class="row">
+            <div class="title text-center">
+                <h2>No Search Results...</h2>
+            </div>
+        </div>
+        {{/if}}
+        <div class="row">
+            {{#each products}}
+            <div class="col-md-4">
+                <div class="product-item">
+                    <div class="product-thumb">
+                        <span class="bage">Sale</span>
+                        <img class="img-responsive" src="/images/product-images/{{this._id}}.jpg" alt="product-img" />
+                        <div class="preview-meta">
+                            <ul>
+                                <li>
+                                    <span data-toggle="modal" data-target="#{{this._id}}product-modal">
+                                        <i class="tf-ion-ios-search-strong"></i>
+                                    </span>
+                                </li>
+                                {{#if ../user}}
+                                <li>
+                                    <a href="javascript:void(0);" onclick="addtocart('{{this._id}}')"><i
+                                            class="tf-ion-android-cart"></i></a>
+                                </li>
+                                {{/if}}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h4><a href="product-single.html">{{this.name}}</a></h4>
+                        <p class="price">Rs.{{this.price}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal product-modal fade" id="{{this._id}}product-modal">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="tf-ion-close"></i>
+                </button>
+                <div class="modal-dialog " role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-8 col-sm-6 col-xs-12">
+                                    <div class="modal-image">
+                                        <img class="img-responsive" src="/images/product-images/{{this._id}}.jpg"
+                                            alt="product-img" />
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                    <div class="product-short-details">
+                                        <h2 class="product-title">{{this.name}}</h2>
+                                        <p class="product-price">Rs.{{this.price}}</p>
+                                        <p class="product-short-description">{{this.description}}</p>
+                                        <h4 class="category">{{this.category}}</h4>
+                                        {{#if ../user}}
+                                        <a href="cart.html" class="btn btn-main">Add To Cart</a>
+                                        {{/if}}
+                                        {{!-- <a href="product-single.html" class="btn btn-transparent">View Product
+                                            Details</a> --}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.modal -->
+            {{/each}}
+
+        </div>
+    </div>
+</section>

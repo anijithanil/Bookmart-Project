@@ -1,0 +1,181 @@
+<!-- Start Top Header Bar -->
+<section class="top-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-xs-12 col-sm-4">
+				<div class="contact-number">
+					<i class="tf-ion-ios-telephone"></i>
+					<span>+91 9544607313</span>
+				</div>
+			</div>
+			<div class="col-md-4 col-xs-12 col-sm-4">
+				<!-- Site Logo -->
+				<div class="logo text-center">
+					<a href="/">
+						<!-- replace logo here -->
+						<svg width="270px" height="29px" viewBox="0 0 155 29" version="1.1"
+							xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+							<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="40"
+								font-family="AustinBold, Austin" font-weight="bold">
+								<g id="Group" transform="translate(-150.000000, -297.000000)" fill="#000000">
+									<text id="AVIATO">
+										<tspan x="108.94" y="325">BOOK MART</tspan>
+									</text>
+								</g>
+							</g>
+						</svg>
+					</a>
+				</div>
+			</div>
+			<div class="col-md-4 col-xs-12 col-sm-4">
+				<!-- Cart -->
+				<ul class="top-menu text-right list-inline">
+					<li class="dropdown cart-nav dropdown-slide">
+						<a href="/cart"><i class="tf-ion-android-cart"></i>Cart<span class="badge badge-success"
+								id="cart-count">{{cartcount}}</span></a>
+
+					</li><!-- / Cart -->
+
+					<!-- Search -->
+					<li class="dropdown search dropdown-slide">
+						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i
+								class="tf-ion-ios-search-strong"></i> Search</a>
+						<ul class="dropdown-menu search-dropdown">
+							<li>
+								<form action="/search" method="POST">
+									<input type="search" name="search" class="form-control" required="required"
+										placeholder="Search...">
+									<input type="submit" value="search" class="hidden">
+								</form>
+							</li>
+						</ul>
+					</li><!-- / Search -->
+					{{#if user}}
+					<li class="nav-item">
+						<a class="nav-link" href="/orders">Orders</a>
+					</li>
+					{{/if}}
+
+					<!-- Languages -->
+					<li class="nav-item">
+						<div class="dropdown">
+							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								{{#if user}}
+								{{user.name}}
+
+								{{else}}
+								Account
+								{{/if}}
+							</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								{{#if user}}
+								<a class="dropdown-item" href="/logout">Logout</a>
+								{{else}}
+								<a class="dropdown-item" href="/login">Login</a>
+								{{/if}}
+							</div>
+						</div>
+					</li>
+
+
+
+				</ul><!-- / .nav .navbar-nav .navbar-right -->
+
+			</div>
+		</div>
+	</div>
+</section><!-- End Top Header Bar -->
+
+
+<!-- Main Menu Section -->
+<section class="menu">
+	<nav class="navbar navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<h2 class="menu-title">Main Menu</h2>
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+					aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+			</div><!-- / .navbar-header -->
+
+			<!-- Navbar Links -->
+			<div id="navbar" class="navbar-collapse collapse text-center">
+				<ul class="nav navbar-nav">
+
+					<!-- Home -->
+					<li class="dropdown ">
+						<a href="/">Home</a>
+					</li><!-- / Home -->
+
+
+
+
+
+					<!-- Pages -->
+					<li class="dropdown full-width dropdown-slide">
+						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+							data-delay="350" role="button" aria-haspopup="true" aria-expanded="false">Pages <span
+								class="tf-ion-ios-arrow-down"></span></a>
+						<div class="dropdown-menu">
+							<div class="row">
+
+								<!-- Introduction -->
+								{{!-- <div class="col-sm-3 col-xs-12">
+									<ul>
+
+
+										<li><a href="contact.html">Contact Us</a></li>
+										<li><a href="about.html">About Us</a></li>
+
+
+
+									</ul>
+								</div> --}}
+
+								<!-- Contact -->
+								<div class="col-sm-4 col-xs-12">
+									<ul>
+
+										<li><a href="/orders">Orders</a></li>
+										<li><a href="/privacypolicy">Privacy Policy</a></li>
+
+										{{!-- <li><a href="profile-details.html">Profile Details</a></li> --}}
+									</ul>
+								</div>
+
+								<!-- Utility -->
+								<div class="col-sm-4 col-xs-12">
+									<ul>
+
+										<li><a href="/login">Login</a></li>
+										<li><a href="/signup">Signin</a></li>
+										{{!-- <li><a href="forget-password.html">Forget Password</a></li> --}}
+									</ul>
+								</div>
+								<div class="col-sm-4 col-xs-12">
+									<ul>
+										<li>
+											<a href="my-account">My Account</a>
+										</li>
+									</ul>
+								</div>
+
+								<!-- Mega Menu -->
+
+							</div><!-- / .row -->
+						</div><!-- / .dropdown-menu -->
+					</li><!-- / Pages -->
+
+				</ul><!-- / .nav .navbar-nav -->
+
+			</div>
+			<!--/.navbar-collapse -->
+		</div><!-- / .container -->
+	</nav>
+</section>

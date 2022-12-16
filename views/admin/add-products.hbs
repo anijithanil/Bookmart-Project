@@ -1,0 +1,30 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="text-center">Add producs</h2>
+                <form action="/admin/add-products" method="post" enctype="multipart/form-data">
+                    <label for="">Name</label>
+                    <input type="text" name="name" required="required" class="form-control">
+
+                    <label for="">Category</label>
+                    <input type="text" name="category" required="required" class="form-control">
+
+                    <label for="">Price</label>
+                    <input type="text" name="price" required="required" class="form-control">
+
+                    <label for="">Stock</label>
+                    <input type="number" name="stock" required="required" min="1" class="form-control">
+
+                    <label for="">Description</label>
+                    <input type="text" name="description" required="required" class="form-control">
+
+                    <label for="">Image</label>
+                    <input type="file" name="image" required="required" class="form-control">
+
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

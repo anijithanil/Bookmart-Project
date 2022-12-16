@@ -1,0 +1,27 @@
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Order</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Price(Rs)</th>
+                    <th scope="col">Status</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each orders}}
+                <tr>
+                    <td>{{@key}}</td>
+                    <td>{{this.odd.name}}</td>
+                    <td>{{this.date}}</td>
+                    <td>{{this.totalamount}}</td>
+                     <td>{{this.status}}</td>
+                    <td><a href="admin/orderdetails/{{this._id}}" class="btn btn-primary">View</a></td>
+                    <td><a href="admin/order-delete/{{this._id}}" onclick="return confirm('Are you want to delete this order')" class="btn btn-danger">Delete</a></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>

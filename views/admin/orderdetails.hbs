@@ -1,0 +1,43 @@
+<section>
+    <div class="container mt-5">
+        <div class="row">
+
+            {{#each details}}
+
+            <div class="col-md-3 p-3">
+                <div class="card" style="height:24rem ;width:15rem">
+                    <img class="card-img-top" src="/images/product-images/{{this.product._id}}.jpg" alt="card image cap"
+                        style="height: 12rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.product.name}}</h5>
+                        <p class="card-text">Rs. {{this.product.price}}</p>
+                        <p class="card-text">Quantity : {{this.quantity}}</p>
+                        <p class="card-text">{{this.description}}</p>
+                    </div>
+                </div>
+
+            </div>
+            {{#if @last}} 
+            Total Amount :Rs.{{this.totalamount}} 
+            <label class="capitalize">Status: {{this.status}}</label>
+            <form action="" method="" id="changestatus">
+                <label for="status">Change:</label>
+                <select name="status" selected="shipped" required id="status">
+                    <option value="" id="">select</option>
+                    <option value="placed">Placed</option>
+                    <option value="pending" >Pending</option>
+                    <option value="shipped">Shipped</option>
+                    <option value="delivered">Delivered</option>
+                </select>
+                <br><br>
+                 <input type="text" name="userid" id="userid"  value="{{this._id}}" hidden>
+                <input type="submit" value="Change">
+            </form>
+
+            {{/if}}
+
+            {{/each}}
+
+        </div>
+    </div>
+</section>
